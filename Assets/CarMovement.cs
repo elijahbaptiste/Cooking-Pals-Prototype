@@ -22,25 +22,9 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb3D.AddForce(rb3D.transform.forward * 50,ForceMode.Force);
-        }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb3D.AddTorque(0, 10, 0, ForceMode.Acceleration);
-        }
-
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            rb3D.AddForce(rb3D.transform.forward * -50, ForceMode.Force);
-        }
-
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            rb3D.AddTorque(0, -10, 0, ForceMode.Acceleration);
-        }
+        rb3D.AddTorque(rb3D.transform.up * Input.GetAxis("Horizontal") * 20, ForceMode.Acceleration);
+        rb3D.AddForce(rb3D.transform.forward * 35 * Input.GetAxis("Vertical"), ForceMode.Force);
 
     }
 }
