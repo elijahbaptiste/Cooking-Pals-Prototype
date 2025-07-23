@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerCam.transform.position = car.transform.position + new Vector3(-12,10,10);
+        //PlayerCam.transform.position = car.transform.position + new Vector3(-12,10,10);
         PlayerCam.transform.LookAt(FacingPoint.transform);
         
     }
