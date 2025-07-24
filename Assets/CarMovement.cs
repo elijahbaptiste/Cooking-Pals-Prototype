@@ -44,7 +44,6 @@ public class CarMovement : MonoBehaviour
             currBreakForce = breakForce;
         else
             currBreakForce = 0f;
-        Debug.Log("Current Break Force: " + currBreakForce);
 
         FrontLeft.motorTorque = currAcceleration;
         FrontRight.motorTorque = currAcceleration;
@@ -55,7 +54,6 @@ public class CarMovement : MonoBehaviour
         BackRight.motorTorque = currBreakForce;
 
         currTurnAngle = MaxTurnAngle * Input.GetAxis("Horizontal");
-        Debug.Log("Current turn angle: "+ currTurnAngle);
         FrontLeft.steerAngle = currTurnAngle;
         FrontRight.steerAngle = currTurnAngle;
 
